@@ -1,6 +1,4 @@
-mocha.setup({ui: 'bdd', globals: ['script*', 'jQuery*']});
-
-define([], function() {
+define(['chai'], function(chai) {
     var expect = chai.expect;
 
     describe("<% _.slugify(appname) %> unit test", function () {

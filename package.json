@@ -1,11 +1,11 @@
 {
-  "name": "generator-console-plugin",
+  "name": "generator-requirejs-mocha",
   "version": "0.1.0",
-  "description": "Yeoman generator for creating console plugins.",
+  "description": "Yeoman generator for creating requirejs / mocha projects.",
   "keywords": [
     "yeoman-generator"
   ],
-  "author": "ChatDevTeam",
+  "author": "Shane Johnson",
   "main": "app/index.js",
   "scripts": {
     "test": "mocha --reporter spec"

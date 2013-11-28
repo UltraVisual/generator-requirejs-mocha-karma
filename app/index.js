@@ -5,9 +5,9 @@ var yeoman = require('yeoman-generator');
 var _ = require('underscore');
 
 
-module.exports = ConsolePluginGenerator;
+module.exports = YeomanGenerator;
 
-function ConsolePluginGenerator(args, options, config) {
+function YeomanGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
   this.mainJsFile = '';
@@ -19,13 +19,13 @@ function ConsolePluginGenerator(args, options, config) {
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
 }
 
-util.inherits(ConsolePluginGenerator, yeoman.generators.NamedBase);
+util.inherits(YeomanGenerator, yeoman.generators.NamedBase);
 
-ConsolePluginGenerator.prototype.askFor = function askFor() {
+YeomanGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   var prompts = [{
-    name: 'includeRequireJS',
+    name: 'devFolderName',
     message: 'Would you like to include RequireJS (for AMD support)?',
     default: 'Y/n',
     warning: 'Yes: RequireJS will be placed into the JavaScript vendor directory.'
@@ -41,51 +41,55 @@ ConsolePluginGenerator.prototype.askFor = function askFor() {
     // manually deal with the response, get back and store the results.
     // we change a bit this way of doing to automatically do this in the self.prompt() method.
     //this.compassBootstrap = (/y/i).test(props.compassBootstrap);
-    this.includeRequireJS = (/y/i).test(props.includeRequireJS);
+    this.devFolderName = (/y/i).test(props.devFolderName);
 
     cb();
   }.bind(this));
 };
 
-ConsolePluginGenerator.prototype.gruntfile = function gruntfile() {
+YeomanGenerator.prototype.gruntfile = function gruntfile() {
   this.template('Gruntfile.js');
 };
 
-ConsolePluginGenerator.prototype.mocha = function mocha() {
+YeomanGenerator.prototype.mocha = function mocha() {
   this.directory('test', 'test');
-  this.template('spec.js', 'test/spec/' + this.appname.replace("console-plugin-", "") + '.spec.js')
+  this.template('spec.js', 'test/spec/' + this.appname + '.spec.js')
 };
 
-ConsolePluginGenerator.prototype.packageJSON = function packageJSON() {
+YeomanGenerator.prototype.packageJSON = function packageJSON() {
   this.template('_package.json', 'package.json');
 };
 
-ConsolePluginGenerator.prototype.git = function git() {
+YeomanGenerator.prototype.karmaConfig = function karmaConfig() {
+  this.template('_karma.conf.js', 'karma.conf.js');
+};
+
+YeomanGenerator.prototype.git = function git() {
   this.copy('gitignore', '.gitignore');
   this.copy('gitattributes', '.gitattributes');
 };
 
-ConsolePluginGenerator.prototype.bower = function bower() {
+YeomanGenerator.prototype.bower = function bower() {
   this.copy('bowerrc', '.bowerrc');
   this.template('_component.json', 'development/component.json');
 };
 
-ConsolePluginGenerator.prototype.jshint = function jshint() {
+YeomanGenerator.prototype.jshint = function jshint() {
   this.copy('jshintrc', '.jshintrc');
 };
 
-ConsolePluginGenerator.prototype.editorConfig = function editorConfig() {
+YeomanGenerator.prototype.editorConfig = function editorConfig() {
   this.copy('editorconfig', '.editorconfig');
 };
 
-ConsolePluginGenerator.prototype.requirejs = function requirejs() {
+YeomanGenerator.prototype.requirejs = function requirejs() {
   this.template('require.json', 'require.json')
 };
 
-ConsolePluginGenerator.prototype.plugin = function plugin() {
+YeomanGenerator.prototype.plugin = function plugin() {
   this.mkdir('development');
   this.mkdir('development/styles');
   this.mkdir('development/templates');
   this.mkdir('development/lib');
-  this.template('plugin.js', 'development/' + this.appname + '.js')
+  this.template('main.js', 'development/' + this.appname + '.js')
 };

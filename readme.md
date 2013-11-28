@@ -1,6 +1,4 @@
-# Console Plugin Generator
-
-Generator for html5 console plugins.
+# Requirejs / Mocha / Karma Generator
 
 ## Requirements
 To use this generator you will need to have Yeoman, Node.js and NPM installed. You can do so through Homebrew.
@@ -17,8 +15,8 @@ Create a directory with the name you want the plugin to be called and change in 
 
 Install the generator in the new directory.
 
-	npm install git+ssh://gitosis@git.dev.gamesys.corp:generator-console-plugin.git
+	npm install git+ssh://git@github.com:UltraVisual/generator-requirejs-mocha-karma.git
 
 Generate a new plugin.
 
-	yo console-plugin
+	yo requirejs-mocha
