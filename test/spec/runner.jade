@@ -1,0 +1,30 @@
+!!! 5
+html
+	head
+		meta(charset='utf8')
+		link(rel='stylesheet', href='mocha.css')
+		- each style in styles
+			link(rel='stylesheet', href='../../production/#{style}')
+	body
+		#mocha
+		hr
+		script(src='lib/mocha.js')
+		script(src='lib/chai.js')
+		script(src='lib/sinon.js')
+		script(src='lib/sinon-chai.js')
+		script(src='lib/jquery.js')
+		script(src='lib/chai-jquery.js')
+		script
+			mocha.ui('bdd')
+			mocha.reporter('html')
+			expect = chai.expec
+		script(src='./lib/require.js')
+		script
+			require.config(!{JSON.stringify(rjs)})
+			require(!{JSON.stringify(specs)}, function(){
+				if (window.mochaPhantomJS) {
+					mochaPhantomJS.run()
+				} else {
+					mocha.run()
+				}
+			})

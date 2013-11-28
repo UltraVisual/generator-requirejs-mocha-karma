@@ -1,0 +1,20 @@
+{
+  "name": "<%= _.slugify(appname)%>",
+  "version": "0.1.0",
+  "scripts": [
+  	"<%= _.slugify(appname) %>.js"
+  ],
+  "location": "gamesys/plugins/<%= _.slugify(appname) %>",
+  "templates": [
+
+  ],
+  "styles": [
+
+  ],
+  "main": "<%= _.slugify(appname) %>.js",
+  "dependencies": {
+    "underscore-amd": "~1.4.4",
+    "requirejs-text": "~2.0.5"
+  },
+  "devDependencies": {}
+}
