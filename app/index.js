@@ -29,6 +29,7 @@ YeomanGenerator.prototype.askFor = function askFor() {
 		message: 'What is the name of your development folder',
 		default: devFolderName
   }];
+	var prompts[];
 
 	this.prompt(prompts, function (err, props) {
 		if (err) {
@@ -38,7 +39,7 @@ YeomanGenerator.prototype.askFor = function askFor() {
 		// manually deal with the response, get back and store the results.
 		// we change a bit this way of doing to automatically do this in the self.prompt() method.
 		//this.compassBootstrap = (/y/i).test(props.compassBootstrap);
-		devFolderName = props.devFolderName;
+		//devFolderName = props.devFolderName;
 
 		cb();
 	}.bind(this));

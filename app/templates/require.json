@@ -13,15 +13,9 @@
 
 	"modules": [
 		{
-			"name": "<%= _.slugify(appname) %>",
-			"exclude": [
-					"text"
-				],
-			"include": [
-					"text!component.json"
-				]
-			}
-		],
+			"name": "<%= _.slugify(appname) %>"
+		}
+	],
 
 	"packages": [
 			"underscore", {
