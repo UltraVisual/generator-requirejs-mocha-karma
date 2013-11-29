@@ -1,35 +1,33 @@
-(function(){
-	var require = {
-		"appDir": "development",
-		"baseUrl": "./",
-		"dir": "production",
-		"optimize": "uglify2",
-		"optimizeCss": "none",
-		"fileExclusionRegExp": "vendor|.*min\\.js|support$",
-		"preserveLicenseComments": false,
-	
-		"paths": {
-			"text": "components/requirejs-text/text"
-		},
-	
-		"modules": [
-			{
-				"name": "<%= _.slugify(appname) %>",
-				"exclude": [
+{
+	"appDir": "development",
+	"baseUrl": "./",
+	"dir": "production",
+	"optimize": "uglify2",
+	"optimizeCss": "none",
+	"fileExclusionRegExp": "vendor|.*min\\.js|support$",
+	"preserveLicenseComments": false,
+
+	"paths": {
+		"text": "components/requirejs-text/text"
+	},
+
+	"modules": [
+		{
+			"name": "<%= _.slugify(appname) %>",
+			"exclude": [
 					"text"
 				],
-				"include": [
+			"include": [
 					"text!component.json"
 				]
 			}
 		],
-	
-		"packages": [
+
+	"packages": [
 			"underscore", {
-				"name": "underscore",
-				"main": "underscore",
-				"location": "components/underscore-amd"
+			"name": "underscore",
+			"main": "underscore",
+			"location": "components/underscore-amd"
 			}
 		]
-	}
-})();
+}

@@ -13,7 +13,7 @@ function YeomanGenerator(args, options, config) {
   this.mainJsFile = '';
 
   this.on('end', function () {
-    console.log('\nI\'m all done. Just run ' + 'npm install'.bold.yellow + ' to install the required dependencies.');
+    console.log('\nI\'m all done. Just run npm install to install the required dependencies.');
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
