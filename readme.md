@@ -17,6 +17,6 @@ Install the generator in the new directory.
 
 	npm install git+ssh://git@github.com:UltraVisual/generator-requirejs-mocha-karma.git
 
-Generate a new plugin.
+Generate a new project.
 
 	yo requirejs-mocha

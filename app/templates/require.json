@@ -1,33 +1,35 @@
-{
-    "appDir":"development",
-    "baseUrl":"./",
-    "dir":"production",
-    "optimize":"uglify2",
-    "optimizeCss":"none",
-    "fileExclusionRegExp":"vendor|.*min\\.js|support$",
-    "preserveLicenseComments":false,
-
-    "paths":{
-        "text":"components/requirejs-text/text"
-    },
-
-    "modules":[
-        {
-            "name":"<%= _.slugify(appname) %>",
-            "exclude":[
-                "text"
-            ],
-            "include":[
-                "text!component.json"
-            ]
-        }
-    ],
-
-    "packages":[
-        "underscore", {
-            "name":"underscore",
-            "main":"underscore",
-            "location":"components/underscore-amd"
-        }
-    ]
-}
+(function(){
+	var require = {
+		"appDir": "development",
+		"baseUrl": "./",
+		"dir": "production",
+		"optimize": "uglify2",
+		"optimizeCss": "none",
+		"fileExclusionRegExp": "vendor|.*min\\.js|support$",
+		"preserveLicenseComments": false,
+	
+		"paths": {
+			"text": "components/requirejs-text/text"
+		},
+	
+		"modules": [
+			{
+				"name": "<%= _.slugify(appname) %>",
+				"exclude": [
+					"text"
+				],
+				"include": [
+					"text!component.json"
+				]
+			}
+		],
+	
+		"packages": [
+			"underscore", {
+				"name": "underscore",
+				"main": "underscore",
+				"location": "components/underscore-amd"
+			}
+		]
+	}
+})();
