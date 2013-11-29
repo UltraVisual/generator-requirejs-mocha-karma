@@ -11,19 +11,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		csso: {
-			main: {
-				options: {
-					restructure: true
-				},
-				files: [
-					{
-						src: 'production/styles/style.css',
-						dest: 'production/styles/style.css'
-					}
-                ]
-			}
-		},
 		karma: {
 			options: {
 				requireConfigPath: rjsConfig
@@ -47,7 +34,7 @@ module.exports = function (grunt) {
 		bower.on('exit', this.async())
 	})
 
-	grunt.loadNpmTasks('grunt-contrib-requirejs')
+	require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
-	grunt.registerTask('default', ['requirejs', 'test'])
+	grunt.registerTask('default', ['requirejs', 'karma:dev'])
 }
