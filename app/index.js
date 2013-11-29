@@ -3,13 +3,13 @@ var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
 var _ = require('underscore');
-
+var devFolderName = "development";
 
 module.exports = YeomanGenerator;
 
 function YeomanGenerator(args, options, config) {
 	yeoman.generators.Base.apply(this, arguments);
-	this.devFolderName = "development";
+
 	this.mainJsFile = '';
 
 	this.on('end', function () {
@@ -41,7 +41,7 @@ YeomanGenerator.prototype.askFor = function askFor() {
 		// manually deal with the response, get back and store the results.
 		// we change a bit this way of doing to automatically do this in the self.prompt() method.
 		//this.compassBootstrap = (/y/i).test(props.compassBootstrap);
-		this.devFolderName = (/y/i).test(props.devFolderName);
+		devFolderName = (/y/i).test(props.devFolderName);
 
 		cb();
 	}.bind(this));
@@ -87,9 +87,9 @@ YeomanGenerator.prototype.requirejs = function requirejs() {
 };
 
 YeomanGenerator.prototype.plugin = function plugin() {
-	this.mkdir(this.devFolderName);
-	this.mkdir(this.devFolderName + '/styles');
-	this.mkdir(this.devFolderName + '/templates');
-	this.mkdir(this.devFolderName + '/lib');
-	this.template('main.js', this.devFolderName + '/' + this.appname + '.js')
+	this.mkdir(devFolderName);
+	this.mkdir(devFolderName + '/styles');
+	this.mkdir(devFolderName + '/templates');
+	this.mkdir(devFolderName + '/lib');
+	this.template('main.js', devFolderName + '/' + this.appname + '.js')
 };
