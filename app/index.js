@@ -29,7 +29,7 @@ YeomanGenerator.prototype.askFor = function askFor() {
 		message: 'What is the name of your development folder',
 		default: devFolderName
   }];
-	var prompts[];
+	var prompts = [];
 
 	this.prompt(prompts, function (err, props) {
 		if (err) {
