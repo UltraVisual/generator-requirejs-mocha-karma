@@ -11,7 +11,7 @@
 
 	
 	require.config({
-		baseUrl: 'base/',
+		baseUrl: '/base/',
 
 		paths: {
 			'chai': 'test/spec/lib/chai',
