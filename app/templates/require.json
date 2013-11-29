@@ -8,7 +8,6 @@
 	"preserveLicenseComments": false,
 
 	"paths": {
-		"text": "components/requirejs-text/text"
 	},
 
 	"modules": [
@@ -18,10 +17,5 @@
 	],
 
 	"packages": [
-			"underscore", {
-			"name": "underscore",
-			"main": "underscore",
-			"location": "components/underscore-amd"
-			}
 		]
 }
