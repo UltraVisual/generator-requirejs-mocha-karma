@@ -13,7 +13,7 @@ function YeomanGenerator(args, options, config) {
 	this.mainJsFile = '';
 
 	this.on('end', function () {
-		console.log('\nI\'m all done. Just run npm install to install the required dependencies.');
+		console.log('\nI\'m all done. Just run "npm install" to install the required dependencies.');
 	});
 
 	this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
@@ -26,12 +26,9 @@ YeomanGenerator.prototype.askFor = function askFor() {
 
 	var prompts = [{
 		name: 'devFolderName',
-		message: 'Would you like to include RequireJS (for AMD support)?',
-		default: 'Y/n',
-		warning: 'Yes: RequireJS will be placed into the JavaScript vendor directory.'
+		message: 'What is the name of your development folder',
+		default: devFolderName
   }];
-
-	var prompts = [];
 
 	this.prompt(prompts, function (err, props) {
 		if (err) {
@@ -41,7 +38,7 @@ YeomanGenerator.prototype.askFor = function askFor() {
 		// manually deal with the response, get back and store the results.
 		// we change a bit this way of doing to automatically do this in the self.prompt() method.
 		//this.compassBootstrap = (/y/i).test(props.compassBootstrap);
-		//devFolderName = (/y/i).test(props.devFolderName);
+		devFolderName = props.devFolderName;
 
 		cb();
 	}.bind(this));
@@ -71,7 +68,7 @@ YeomanGenerator.prototype.git = function git() {
 
 YeomanGenerator.prototype.bower = function bower() {
 	this.copy('bowerrc', '.bowerrc');
-	this.template('_component.json', 'development/component.json');
+	this.template('_bower.json', 'bower.json');
 };
 
 YeomanGenerator.prototype.jshint = function jshint() {
@@ -87,7 +84,6 @@ YeomanGenerator.prototype.requirejs = function requirejs() {
 };
 
 YeomanGenerator.prototype.plugin = function plugin() {
-	console.log("Shane: Index.js : 89 : ", devFolderName)
 	this.mkdir(devFolderName);
 	this.mkdir(devFolderName + '/styles');
 	this.mkdir(devFolderName + '/templates');
