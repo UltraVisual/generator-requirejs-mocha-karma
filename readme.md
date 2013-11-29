@@ -1,14 +1,14 @@
 # Requirejs / Mocha / Karma Generator
 
 ## Requirements
-To use this generator you will need to have Yeoman, Node.js and NPM installed. You can do so through Homebrew.
+To use this generator you will need to have Yeoman, Node.js and NPM installed. You can do so through Homebrew on a Mac or manually on a PC/Linux.
 
 	brew install node
 	sudo npm install -g yeoman
 
 ## Usage
 
-Create a directory with the name you want the plugin to be called and change in to it.
+Create a directory with the name you want the project to be called and cd in to it.
 
 	mkdir foobar
 	cd foobar
