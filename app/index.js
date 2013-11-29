@@ -87,6 +87,7 @@ YeomanGenerator.prototype.requirejs = function requirejs() {
 };
 
 YeomanGenerator.prototype.plugin = function plugin() {
+	console.log("Shane: Index.js : 89 : ", devFolder)
 	this.mkdir(devFolderName);
 	this.mkdir(devFolderName + '/styles');
 	this.mkdir(devFolderName + '/templates');
