@@ -9,14 +9,12 @@
 		}
 	}
 
-	
 	require.config({
-		baseUrl: '/base/',
-
+		baseUrl: '/base/development/',
 		paths: {
-			'chai': 'test/spec/lib/chai',
-			'sinon': 'test/spec/lib/sinon',
-			'sinon-chai': 'test/spec/lib/sinon-chai'
+			'chai': '../test/spec/lib/chai',
+			'sinon': '../test/spec/lib/sinon',
+			'sinon-chai': '../test/spec/lib/sinon-chai'
 		},
 
 		deps: ['chai', 'sinon', 'sinon-chai'],
