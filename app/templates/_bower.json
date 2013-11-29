@@ -1,0 +1,25 @@
+{
+	"name": "<%= _.slugify(appname)%>",
+	"version": "0.0.0",
+	"authors": [
+    "Shane Johnson <shane.johnson@gamesys.co.uk>"
+  ],
+	"scripts": [
+  	"<%= _.slugify(appname) %>.js"
+  ],
+	"main": "<%= _.slugify(appname) %>.js",
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"underscore-amd": "~1.4.4",
+		"requirejs-text": "~2.0.5"
+	},
+	"devDependencies": {},
+	"ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
