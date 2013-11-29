@@ -67,7 +67,6 @@ YeomanGenerator.prototype.git = function git() {
 };
 
 YeomanGenerator.prototype.bower = function bower() {
-	this.copy('bowerrc', '.bowerrc');
 	this.template('_bower.json', 'bower.json');
 };
 
