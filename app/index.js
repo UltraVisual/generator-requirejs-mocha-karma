@@ -41,7 +41,7 @@ YeomanGenerator.prototype.askFor = function askFor() {
 		// manually deal with the response, get back and store the results.
 		// we change a bit this way of doing to automatically do this in the self.prompt() method.
 		//this.compassBootstrap = (/y/i).test(props.compassBootstrap);
-		devFolderName = (/y/i).test(props.devFolderName);
+		//devFolderName = (/y/i).test(props.devFolderName);
 
 		cb();
 	}.bind(this));
