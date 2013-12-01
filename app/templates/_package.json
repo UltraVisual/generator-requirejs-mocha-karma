@@ -1,13 +1,13 @@
 {
-    "name":"<%= _.slugify(appname) %>",
-    "version":"0.0.1",
-    "main":"<%= _.slugify(appname) %>.js",
-    "scripts":{
-        "test":"./node_modules/.bin/grunt test",
-        "install":"./node_modules/.bin/grunt install"
-    },
-    "devDependencies":{
-        "grunt-contrib-requirejs": "~0.4.0",
+	"name": "<%= _.slugify(appname) %>",
+	"version": "0.0.1",
+	"main": "<%= _.slugify(appname) %>.js",
+	"scripts": {
+		"test": "./node_modules/.bin/grunt test",
+		"install": "./node_modules/.bin/grunt install"
+	},
+	"devDependencies": {
+		"grunt-contrib-requirejs": "~0.4.0",
 		"grunt": "~0.4.0",
 		"grunt-contrib-compress": "~0.4.0",
 		"grunt-contrib-copy": "~0.4.0",
@@ -31,7 +31,7 @@
 		"karma": "~0.10.1",
 		"karma-mocha": "~0.1.0",
 		"karma-spec-reporter": "0.0.4",
-		"grunt-karma": "~0.6.1"
-    }
+		"grunt-karma": "~0.6.1",
+    "karma-coverage": "~0.1.0"
+	}
 }
-
