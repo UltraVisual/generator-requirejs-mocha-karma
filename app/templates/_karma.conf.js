@@ -1,89 +1,96 @@
 // Karma configuration
 // Generated on Thu Nov 28 2013 07:25:49 GMT+0000 (GMT)
 
-module.exports = function(config) {
-  config.set({
+module.exports = function (config) {
+	config.set({
 
-    // base path, that will be used to resolve files and exclude
-    basePath: '',
-
-
-    // frameworks to use
-    frameworks: ['mocha', 'requirejs'],
+		// base path, that will be used to resolve files and exclude
+		basePath: '',
 
 
-    // list of files / patterns to load in the browser
-    files: [
-      			'test/runner.js',
+		// frameworks to use
+		frameworks: ['mocha', 'requirejs'],
+
+
+		// list of files / patterns to load in the browser
+		files: [
+         'test/runner.js',
 			{
 				pattern: 'test/spec/**/*.spec.js',
 				included: false
-			},
+   },
 			{
 				pattern: 'development/**/*.js',
 				included: false
-			},
+   },
 			{
 				pattern: 'bower_components/**/*.js',
 				included: false
-			},
+   },
 			{
 				pattern: 'development/**/*.json',
 				included: false
-			},
+   },
 			{
 				pattern: 'test/spec/lib/*.js',
 				included: false
-			}
-    ],
-	  
-
-
-    // list of files to exclude
-    exclude: [
-      
+   }
     ],
 
 
-    // test results reporter to use
-    // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-    reporters: ['progress'],
+
+		// list of files to exclude
+		exclude: [
+
+    ],
+		// test results reporter to use
+		// possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+		reporters: ['progress', 'spec', 'coverage'],
+
+		coverageReporter: {
+			type: 'html',
+			dir: 'coverage/'
+		},
+
+		preprocessors: {
+			'development/**/*.js': ['coverage']
+		},
 
 
-    // web server port
-    port: 9876,
+		// web server port
+		port: 9876,
 
 
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
+		// enable / disable colors in the output (reporters and logs)
+		colors: true,
 
 
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+		// level of logging
+		// possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+		logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+		// enable / disable watching file and executing tests whenever any file changes
+		autoWatch: true,
 
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Chrome'],
+		// Start these browsers, currently available:
+		// - Chrome
+		// - ChromeCanary
+		// - Firefox
+		// - Opera
+		// - Safari (only Mac)
+		// - PhantomJS
+		// - IE (only Windows)
+		browsers: ['Chrome'],
 
 
-    // If browser does not capture in given timeout [ms], kill it
-    captureTimeout: 60000,
+		// If browser does not capture in given timeout [ms], kill it
+		captureTimeout: 60000,
 
 
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
-  });
+		// Continuous Integration mode
+		// if true, it capture browsers, run tests and exit
+		singleRun: false
+	});
 };
