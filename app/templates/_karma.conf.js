@@ -28,10 +28,6 @@ module.exports = function (config) {
 				included: false
    },
 			{
-				pattern: 'development/**/*.json',
-				included: false
-   },
-			{
 				pattern: 'test/spec/lib/*.js',
 				included: false
    }
