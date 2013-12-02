@@ -1,21 +1,21 @@
 {
-	"appDir": "development",
-	"baseUrl": "./",
-	"dir": "production",
-	"optimize": "uglify2",
-	"optimizeCss": "none",
-	"fileExclusionRegExp": "vendor|.*min\\.js|support$",
-	"preserveLicenseComments": false,
+    "appDir": "development",
+    "baseUrl": "./",
+    "dir": "production",
+    "optimize": "uglify2",
+    "optimizeCss": "none",
+    "fileExclusionRegExp": "vendor|.*min\\.js|support$",
+    "preserveLicenseComments": false,
 
-	"paths": {
-	},
+    "paths": {
+    },
 
-	"modules": [
-		{
-			"name": "<%= _.slugify(appname) %>"
-		}
-	],
+    "modules": [
+        {
+            "name": "<%= _.slugify(appname) %>"
+        }
+    ],
 
-	"packages": [
-		]
+    "packages": [
+    ]
 }
